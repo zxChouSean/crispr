@@ -9,7 +9,7 @@ from haplotype.data_preprocess import *
 from haplotype.utilities import *
 from haplotype.predict_model import BEDICT_HaplotypeModel
 
-curr_pth = os.path.abspath('.')
+curr_pth = os.path.abspath('../')
 
 '''Read sample data'''
 df = pd.read_csv(f"{curr_pth}/sample_data/bystander_sampledata.csv")
