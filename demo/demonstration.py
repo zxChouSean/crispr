@@ -25,8 +25,11 @@ device = get_device(True, 0)
 '''Create a BE-DICT model by sepcifying the target base editor'''
 base_editor = 'ABEmax'
 bedict = BEDICT_CriscasModel(base_editor, device)
+
+'''Make prediction'''
 pred_w_attn_runs_df, proc_df = bedict.predict_from_dataframe(seq_df)
 
+'''Merge the results together'''
 pred_option = 'mean'
 pred_w_attn_df = bedict.select_prediction(pred_w_attn_runs_df, pred_option)
 pred_w_attn_runs_df.to_csv(os.path.join(csv_dir, f'predictions_allruns.csv'))
